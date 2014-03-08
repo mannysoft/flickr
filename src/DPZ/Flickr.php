@@ -142,10 +142,10 @@ class Flickr
     public function upload($parameters)
     {
         $requestParams = ($parameters == NULL ? array() : $parameters);
+        
+        $this->setOauthData(self::OAUTH_ACCESS_TOKEN_SECRET, $requestParams['oauth_access_token_secret']);
 
         $requestParams = array_merge($requestParams, $this->getOauthParams());
-
-        $requestParams['oauth_token'] = $this->getOauthData(self::OAUTH_ACCESS_TOKEN);
 
         // We don't want to include the photo when signing the request
         // so temporarily remove it whilst we sign
