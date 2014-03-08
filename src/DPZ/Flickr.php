@@ -145,7 +145,6 @@ class Flickr
         
         $this->setOauthData(self::OAUTH_ACCESS_TOKEN_SECRET, $requestParams['oauth_access_token_secret']);
     
-
         $requestParams = array_merge($requestParams, $this->getOauthParams());
 
         // We don't want to include the photo when signing the request
