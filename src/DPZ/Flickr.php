@@ -144,6 +144,7 @@ class Flickr
         $requestParams = ($parameters == NULL ? array() : $parameters);
         
         $this->setOauthData(self::OAUTH_ACCESS_TOKEN_SECRET, $requestParams['oauth_access_token_secret']);
+    
 
         $requestParams = array_merge($requestParams, $this->getOauthParams());
 
